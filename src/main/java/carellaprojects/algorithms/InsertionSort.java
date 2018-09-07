@@ -14,6 +14,20 @@ public class InsertionSort {
         }
         return arr;
     }
+    
+    public int[] nestedForSort(int[] arr) {
+        int temp;
+        for (int i = 1; i < arr.length; i++) {
+            for (int k = i; k > 0; k--) {
+                if (arr[k - 1] > arr[k]) {
+                    temp = arr[k];
+                    arr[k] = arr[k - 1];
+                    arr[k - 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
 
     public void printArray(int[] arr) {
         System.out.print("{");
