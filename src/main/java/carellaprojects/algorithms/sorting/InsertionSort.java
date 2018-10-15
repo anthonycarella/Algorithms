@@ -13,31 +13,23 @@ import java.util.Arrays;
  *
  */
 public class InsertionSort {
-    public static int[] sort(int[] arr) {
-        int temp;
-        for (int i = 1; i < arr.length; i++) {
-            int k = i;
-            while (k > 0 && (arr[k] < arr[k - 1])) {
-                temp = arr[k];
-                arr[k] = arr[k - 1];
-                arr [k - 1] = temp;
-                k--;
+    public static void sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
             }
         }
-        return arr;
-    }
-
-    public static void printArray(int[] arr) {
-        System.out.println(Arrays.toString(arr));
     }
 
     public static void main(String[] args) {
-        int[] arr = {99,5,143,77};
-        System.out.println("=====Insertion Sort=====");
-        System.out.print("Before the sort: ");
-        InsertionSort.printArray(arr);
+        int[] arr = {8, 9, 2, 10, 6, 11, 4, 3, 21, 1};
+        System.out.println(Arrays.toString(arr));
         InsertionSort.sort(arr);
-        System.out.print("After the sort: ");
-        InsertionSort.printArray(arr);
+        System.out.println(Arrays.toString(arr));
+        
     }
 }
