@@ -14,7 +14,7 @@ import java.util.Arrays;
  *
  */
 public class MergeSort {
-    public static void mergeSort(int[] arr) {
+    public static void sort(int[] arr) {
         int[] helper = new int[arr.length];
         int low = 0;
         int high = arr.length - 1;
@@ -59,7 +59,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {99, 34, 68, 1, 72, 285, 70};
         System.out.println(Arrays.toString(arr));
-        mergeSort(arr);
+        MergeSort.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
