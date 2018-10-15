@@ -8,7 +8,8 @@ import java.util.Arrays;
  *     Best Case: O(n) (linear)
  *     Average Case:
  *     Worst Case: O(n^2) (quadratic)
- * Memory:
+ * Memory: O(1) (constant)
+ * 
  * @author Anthony Carella
  *
  */

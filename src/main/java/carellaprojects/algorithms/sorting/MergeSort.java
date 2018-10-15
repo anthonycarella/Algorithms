@@ -8,7 +8,7 @@ import java.util.Arrays;
  *     Best Case: O(n log(n))
  *     Average Case: O(n log(n))
  *     Worst Case: O(n log(n))
- * Memory:
+ * Memory: O(n) (linear)
  * 
  * @author Anthony Carella
  *

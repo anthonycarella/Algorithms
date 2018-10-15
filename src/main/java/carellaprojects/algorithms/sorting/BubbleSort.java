@@ -5,10 +5,10 @@ import java.util.Arrays;
 /**
  * Bubble Sort Sorting Algorithm
  * Runtime: 
- *     Best Case:
- *     Average Case:
- *     Worst Case:
- * Memory:
+ *     Best Case: O(n) (linear)
+ *     Average Case: O(n^2) (quadratic)
+ *     Worst Case: O(n^2) (quadratic)
+ * Memory: O(1) (constant)
  * 
  * @author Anthony Carella
  *
