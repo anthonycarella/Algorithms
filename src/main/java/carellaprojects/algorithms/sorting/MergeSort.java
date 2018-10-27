@@ -16,12 +16,10 @@ import java.util.Arrays;
 public class MergeSort {
     public static void sort(int[] arr) {
         int[] helper = new int[arr.length];
-        int low = 0;
-        int high = arr.length - 1;
-        mergeSort(arr, helper, low, high);
+        mergeSort(arr, helper, 0, arr.length - 1);
     }
-    
-    public static void mergeSort(int[] arr, int[] helper, int low, int high) {
+
+    private static void mergeSort(int[] arr, int[] helper, int low, int high) {
         if (low < high) {
             int middle = (low + high) / 2;
             mergeSort(arr, helper, low, middle);
@@ -29,18 +27,18 @@ public class MergeSort {
             merge(arr, helper, low, middle, high);
         }
     }
-    
-    public static void merge(int[] arr, int[] helper, int low, int middle, int high) {
+
+    private static void merge(int[] arr, int[] helper, int low, int middle, int high) {
         for (int i = low; i <= high; i++) {
             helper[i] = arr[i];
         }
-        
+
         int helperLeft = low;
         int helperRight = middle + 1;
         int current = low;
-        
+
         while (helperLeft <= middle && helperRight <= high) {
-            if (helper[helperLeft] < helper[helperRight]) {
+            if (helper[helperLeft] <= helper[helperRight]) {
                 arr[current] = helper[helperLeft];
                 helperLeft++;
             } else {
@@ -49,13 +47,13 @@ public class MergeSort {
             }
             current++;
         }
-        
+
         int remaining = middle - helperLeft;
         for (int i = 0; i <= remaining; i++) {
-            arr[current + i] = helper[helperLeft + i];
+            arr[current + i] = helper[helperLeft + 1];
         }
     }
-    
+
     public static void main(String[] args) {
         int[] arr = {99, 34, 68, 1, 72, 285, 70};
         System.out.println(Arrays.toString(arr));
