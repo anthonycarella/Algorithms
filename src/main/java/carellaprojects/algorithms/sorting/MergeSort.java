@@ -3,17 +3,30 @@ package carellaprojects.algorithms.sorting;
 import java.util.Arrays;
 
 /**
+ * <pre>
  * Merge Sort Sorting Algorithm
- * Runtime: 
+ * 
+ * A recursive algorithm that splits up an  array of numbers, sorts each of them, then combines and
+ * sorts them again.
+ * 
+ * Runtime:
  *     Best Case: O(n log(n))
  *     Average Case: O(n log(n))
  *     Worst Case: O(n log(n))
+ *
  * Memory: O(n) (linear)
  * 
  * @author Anthony Carella
- *
+ * </pre>
  */
 public class MergeSort {
+    /**
+     * Entry  point for  this algorithm.  Takes an array,  creates a helper array that is the  same
+     * length as the array parameter, and passes the array,  helper array,  start position (0)  and
+     * end  position  (<code>arr.length - 1</code>) to the <code>parameters</code> method.
+     * 
+     * @param arr The array of integers that needs to be sorted.
+     */
     public static void sort(int[] arr) {
         int[] helper = new int[arr.length];
         mergeSort(arr, helper, 0, arr.length - 1);
