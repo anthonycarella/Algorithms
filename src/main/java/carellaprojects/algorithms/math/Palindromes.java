@@ -1,15 +1,21 @@
 package carellaprojects.algorithms.math;
 
 /**
+ * <p>
  * A class that detects whether or not a number or string is a palindrome.
+ * </p>
+ * 
  * @author Anthony Carella
  *
  */
 public class Palindromes {
     /**
+     * <p>
      * Overloaded method that checks if a number is a palindrome.
-     * @param number
-     * @return true if the returned number reversedNumber equals the number parameter.
+     * </p>
+     * 
+     * @param number The number that  needs to be checked  to see if it  is or is not a palindrome.
+     * @return true Returns true if the returned number reversedNumber equals the number parameter.
      *         Otherwise, returns false.
      */
     public static boolean isPalindrome(int number) {
@@ -24,7 +30,9 @@ public class Palindromes {
     }
 
     /**
+     * <p>
      * Overloaded method that checks if a string is a palindrome.
+     * </p>
      * @param word
      * @return true if the returned word reversedWord equals the word parameter.
      *         Otherwise, returns false.
@@ -41,7 +49,10 @@ public class Palindromes {
     }
 
     /**
+     * <p>
      * Reverses a number.
+     * </p>
+     * 
      * @param number
      * @return a reversed version of the number parameter.
      */
@@ -56,18 +67,29 @@ public class Palindromes {
     }
 
     /**
-     * Reverses a string.
-     * @param word
+     * <p>
+     * Reverses a string. Strings are reversed in this method by using a {@code for} loop to
+     * traverse the {@code characterString} parameter from the strings {@code length() - 1} to 0.
+     * </p>
+     * 
+     * @param characterString
      * @return a reversed version of the word parameter.
      */
-    private static String reverse(String word) {
+    private static String reverse(String characterString) {
         String reversedString = new String();
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversedString = reversedString + word.charAt(i);
+        for (int i = characterString.length() - 1; i >= 0; i--) {
+            reversedString = reversedString + characterString.charAt(i);
         }
         return reversedString;
     }
 
+    /**
+     * <p>
+     * Main method that launches the application.
+     * </p>
+     * 
+     * @param args Optional arguments from standard main method.
+     */
     public static void main(String[] args) {
         Palindromes.isPalindrome(24442);
         Palindromes.isPalindrome("abba");
