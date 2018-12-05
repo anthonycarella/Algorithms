@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class NumberSearch {
     public static int findXHighestNumber(int[] arr, int xHighestNumber) {
+        if (xHighestNumber == 0) xHighestNumber = 1;
         System.out.println("Unsorted array : " + Arrays.toString(arr));
         Arrays.sort(arr);
         System.out.println("Sorted array   : " + Arrays.toString(arr));
@@ -16,6 +17,6 @@ public class NumberSearch {
     
     public static void main(String[] args) {
         int[] arr = {1,9,2,8,3};
-        System.out.println(NumberSearch.findXHighestNumber(arr, 5));
+        System.out.println(NumberSearch.findXHighestNumber(arr, 0));
     }
 }
