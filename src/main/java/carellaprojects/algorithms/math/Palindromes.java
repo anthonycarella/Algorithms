@@ -1,5 +1,7 @@
 package carellaprojects.algorithms.math;
 
+import java.util.Scanner;
+
 /**
  * <p>
  * A class that detects whether or not a number or string is a palindrome.
@@ -19,6 +21,7 @@ public class Palindromes {
      *         Otherwise, returns false.
      */
     public static boolean isPalindrome(int number) {
+        System.out.println("Running isPalindrome for number...");
         int reversedNumber = Palindromes.reverse(number);
         if (number == reversedNumber) {
             System.out.println(number + " is a palindrome.");
@@ -38,6 +41,7 @@ public class Palindromes {
      *         Otherwise, returns false.
      */
     public static boolean isPalindrome(String word) {
+        System.out.println("Running isPalindrome for string...");
         String reversedWord = Palindromes.reverse(word);
         if (word.equals(reversedWord)) {
             System.out.println(word + " is a palindrome.");
@@ -50,7 +54,13 @@ public class Palindromes {
 
     /**
      * <p>
-     * Reverses a number.
+     * <pre>
+     * Mathematical function that reverses a number.  The steps to reverse a number are as follows:
+     *     1.) Isolate the last digit of the number
+     *     2.) Append the last digit of the number to the reversed number
+     *     3.) Remove the last digit of the number
+     *     4.) Repeat steps 1 to 3 as long as the number does not equal 0
+     * </pre>
      * </p>
      * 
      * @param number
@@ -91,7 +101,16 @@ public class Palindromes {
      * @param args Optional arguments from standard main method.
      */
     public static void main(String[] args) {
-        Palindromes.isPalindrome(24442);
-        Palindromes.isPalindrome("abba");
+        System.out.println("Please enter the number or string you would like to check for a palindrome:");
+        Scanner in = new Scanner(System.in);
+        String inputCheck = in.nextLine();
+        if (inputCheck.matches("-?\\d+")) {
+            System.out.println("Input is number.");
+            Palindromes.isPalindrome(Integer.parseInt(inputCheck));
+        } else {
+            System.out.println("Input is string.");
+            Palindromes.isPalindrome(inputCheck);
+        }
+        in.close();
     }
 }
