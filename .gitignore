@@ -1,8 +1,13 @@
 .classpath
 .project
+<<<<<<< Updated upstream
 .settings/org.eclipse.jdt.core.prefs
 bin/
 .DS_Store
 .idea/
 out/
 *.iml
+=======
+.settings/
+.bin/
+>>>>>>> Stashed changes
