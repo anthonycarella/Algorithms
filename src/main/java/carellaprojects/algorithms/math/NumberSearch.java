@@ -2,6 +2,18 @@ package carellaprojects.algorithms.math;
 
 import java.util.Arrays;
 
+/**
+ * Find the highest number in an array of integers
+ * Explanation:
+ *     Pass an array of integers,  and the X highest number (xHighestNumber as a variable)
+ *     you would like  to find in that array as  parameters to a method.  This method will
+ *     sort an array, then choose the X number from the end of the array.  For example, if
+ *     you pass 0  as xHighestNumber,  the algorithm will  find the highest  number in the
+ *     array of integers.
+ *
+ * @author Anthony Carella
+ *
+ */
 public class NumberSearch {
     public static int findXHighestNumber(int[] arr, int xHighestNumber) {
         if (xHighestNumber == 0) xHighestNumber = 1;
@@ -16,7 +28,7 @@ public class NumberSearch {
     }
     
     public static void main(String[] args) {
-        int[] arr = {1,9,2,8,3};
-        System.out.println(NumberSearch.findXHighestNumber(arr, 0));
+        int[] arr = {1, 9, 2, 8, 3};
+        System.out.println("Highest Number: " + NumberSearch.findXHighestNumber(arr, 0));
     }
 }
