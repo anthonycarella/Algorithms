@@ -4,17 +4,19 @@ import java.util.Arrays;
 
 /**
  * Insertion Sort Sorting Algorithm
- * Explanation: Loop through each element in an array of integers.  For the position of each one of
- *              the elements,  loop backwards to the beginning of the array.  For each element that
- *              is being loop backwards on,  compare that element to the previous element.  If  the
- *              current element is less than the previous element,  swap the two; store the current
- *              element in a variable (temp),  place the previous element in the  current element's
- *              position, and place the temp variable in the previous element's position.
+ * Explanation:
+ *     Loop through each element in an array of integers.  For the position of each one of
+ *     the elements,  loop backwards to the beginning of the array.  For each element that
+ *     is being loop backwards on,  compare that element to the previous element.  If  the
+ *     current element is less than the previous element,  swap the two; store the current
+ *     element in a variable (temp),  place the previous element in the  current element's
+ *     position, and place the temp variable in the previous element's position.
  * Runtime:
  *     Best Case: O(n) (linear)
- *     Average Case:
+ *     Average Case: O(n^2) (quadratic)
  *     Worst Case: O(n^2) (quadratic)
- * Memory: O(1) (constant)
+ * Memory:
+ *     O(1) (constant)
  * 
  * @author Anthony Carella
  *
