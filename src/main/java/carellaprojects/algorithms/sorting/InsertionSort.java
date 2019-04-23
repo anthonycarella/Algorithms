@@ -5,7 +5,8 @@ import java.util.Arrays;
 /**
  * Insertion Sort Sorting Algorithm
  * Explanation:
- *     Loop through each element in an array of integers.  For the position of each one of
+ *     Insertion sort "inserts" the lesser of two numbers where the number belongs.
+ *     It loops through each element in an array of integers. For the position of each  of
  *     the elements,  loop backwards to the beginning of the array.  For each element that
  *     is being loop backwards on,  compare that element to the previous element.  If  the
  *     current element is less than the previous element,  swap the two; store the current
