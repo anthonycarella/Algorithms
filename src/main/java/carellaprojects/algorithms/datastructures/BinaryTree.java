@@ -1,5 +1,10 @@
 package carellaprojects.algorithms.datastructures;
 
+/**
+ * Implementation of a binary tree that holds integers.
+ * @author Anthony Carella
+ *
+ */
 public class BinaryTree {
     Node root;
 
@@ -35,6 +40,17 @@ public class BinaryTree {
         binaryTree.root.left.right = new Node(216);
         binaryTree.root.right.left = new Node(11);
 
+        System.out.println("Getters");
+        System.out.println("Get root node: " + binaryTree.root.get());
+        System.out.println("Get root's left node: " + binaryTree.root.left.get());
+        System.out.println("Get root's right node: " + binaryTree.root.right.get());
+        System.out.println("Get root's left node's left node: " + binaryTree.root.left.left.get());
+        System.out.println("Get root's left node's right node: " + binaryTree.root.left.right.get());
+        System.out.println("Get root's right node's left node: " + binaryTree.root.right.left.get());
+        System.out.println("Changing root's left node to 1005...");
+        binaryTree.root.left.set(1005);
+        System.out.println("Get root's new left node value: " + binaryTree.root.left.get());
+        
         // Traverse the tree in three different ways.
         System.out.println("### PRE-ORDER TRAVERSAL ###");
         binaryTree.preOrderTraversal(binaryTree.root);
