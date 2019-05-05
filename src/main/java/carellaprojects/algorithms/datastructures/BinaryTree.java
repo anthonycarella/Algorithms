@@ -11,6 +11,14 @@ public class BinaryTree {
         root = null;
     }
 
+    public int get() {
+        return this.root.value;
+    }
+
+    public void set(int value) {
+        this.root.set(value);
+    }
+
     public static void main(String[] args) {
         /* Create a new binary tree.
          *         100
