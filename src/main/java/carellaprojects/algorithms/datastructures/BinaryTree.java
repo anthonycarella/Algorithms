@@ -1,27 +1,43 @@
 package carellaprojects.algorithms.datastructures;
 
 /**
- * Implementation of a binary tree that holds integers.
+ * Implementation of a binary tree that uses generic types.
  * @author Anthony Carella
  *
  */
-public class BinaryTree {
+public class BinaryTree<T> {
+    /**
+     * Inner class of BinaryTreeNode that holds a value, and a reference to the left and right
+     * nodes of each node in the binary tree.
+     */
+    class BinaryTreeNode<T> {
+        T value;
+        BinaryTreeNode left;
+        BinaryTreeNode right;
+
+        BinaryTreeNode(T value) {
+            this.value = value;
+            right = null;
+            left = null;
+        }
+
+        public T get() {
+            return this.value;
+        }
+
+        public void set(T value) {
+            this.value = value;
+        }
+    }
+
     BinaryTreeNode root;
 
-    BinaryTree(int value) {
+    BinaryTree(T value) {
         root = new BinaryTreeNode(value);
     }
 
     BinaryTree() {
         root = null;
-    }
-
-    public int get() {
-        return this.root.value;
-    }
-
-    public void set(int value) {
-        this.root.set(value);
     }
 
     public void preOrderTraversal(BinaryTreeNode node) {
@@ -46,42 +62,51 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        /* Create a new binary tree.
+        /* Create a new binary tree of integers.
          *         100
          *       /     \
          *     45       76
          *    /  \     /
          *   98  216  11
          */
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.root = new BinaryTreeNode(100);
-        binaryTree.root.left = new BinaryTreeNode(45);
-        binaryTree.root.right = new BinaryTreeNode(76);
-        binaryTree.root.left.left = new BinaryTreeNode(98);
-        binaryTree.root.left.right = new BinaryTreeNode(216);
-        binaryTree.root.right.left = new BinaryTreeNode(11);
+        BinaryTree intBinaryTree = new BinaryTree();
+        intBinaryTree.root = intBinaryTree.new BinaryTreeNode(100);
+        intBinaryTree.root.left = intBinaryTree.new BinaryTreeNode(45);
+        intBinaryTree.root.right = intBinaryTree.new BinaryTreeNode(76);
+        intBinaryTree.root.left.left = intBinaryTree.new BinaryTreeNode(98);
+        intBinaryTree.root.left.right = intBinaryTree.new BinaryTreeNode(216);
+        intBinaryTree.root.right.left = intBinaryTree.new BinaryTreeNode(11);
 
-        System.out.println("Getters");
-        System.out.println("Get root node: " + binaryTree.root.get());
-        System.out.println("Get root's left node: " + binaryTree.root.left.get());
-        System.out.println("Get root's right node: " + binaryTree.root.right.get());
-        System.out.println("Get root's left node's left node: " + binaryTree.root.left.left.get());
-        System.out.println("Get root's left node's right node: " + binaryTree.root.left.right.get());
-        System.out.println("Get root's right node's left node: " + binaryTree.root.right.left.get());
-        System.out.println("Changing root's left node to 1005...");
-        binaryTree.root.left.set(1005);
-        System.out.println("Get root's new left node value: " + binaryTree.root.left.get());
-        
-        // Traverse the tree in three different ways.
+        // Traverse the integer tree in three different ways.
         System.out.println("### PRE-ORDER TRAVERSAL ###");
-        binaryTree.preOrderTraversal(binaryTree.root);
+        intBinaryTree.preOrderTraversal(intBinaryTree.root);
         System.out.println("### IN-ORDER TRAVERSAL ###");
-        binaryTree.inOrderTraversal(binaryTree.root);
+        intBinaryTree.inOrderTraversal(intBinaryTree.root);
         System.out.println("### POST-ORDER TRAVERSAL ###");
-        binaryTree.postOrderTraversal(binaryTree.root);
-    }
-}
+        intBinaryTree.postOrderTraversal(intBinaryTree.root);
 
-class BTNode {
-    
+        /*
+         * Create a new binary tree of strings.
+         *          "The All"
+         *         /         \
+         *   "Anthony"     "Jennine"
+         *   /     \       /        \
+         * "Chloe""Benji" "Kaitlyn" "Leeloo"
+         */
+        BinaryTree stringBinaryTree = new BinaryTree("The All");
+        stringBinaryTree.root.left = stringBinaryTree.new BinaryTreeNode("Anthony");
+        stringBinaryTree.root.right = stringBinaryTree.new BinaryTreeNode("Jennine");
+        stringBinaryTree.root.left.left = stringBinaryTree.new BinaryTreeNode("Chloe");
+        stringBinaryTree.root.left.right = stringBinaryTree.new BinaryTreeNode("Benji");
+        stringBinaryTree.root.right.left = stringBinaryTree.new BinaryTreeNode("Kaitlyn");
+        stringBinaryTree.root.right.right = stringBinaryTree.new BinaryTreeNode("Leeloo");
+
+        // Traverse the string tree in three different ways.
+        System.out.println("### PRE-ORDER TRAVERSAL ###");
+        stringBinaryTree.preOrderTraversal(stringBinaryTree.root);
+        System.out.println("### IN-ORDER TRAVERSAL ###");
+        stringBinaryTree.inOrderTraversal(stringBinaryTree.root);
+        System.out.println("### POST-ORDER TRAVERSAL ###");
+        stringBinaryTree.postOrderTraversal(stringBinaryTree.root);
+    }
 }
