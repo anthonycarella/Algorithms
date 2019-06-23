@@ -1,11 +1,11 @@
 package carellaprojects.algorithms.datastructures;
 
-public class Node {
+public class BinaryTreeNode {
     int value;
-    Node left;
-    Node right;
+    BinaryTreeNode left;
+    BinaryTreeNode right;
 
-    Node(int value) {
+    BinaryTreeNode(int value) {
         this.value = value;
         right = null;
         left = null;

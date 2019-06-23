@@ -6,10 +6,10 @@ package carellaprojects.algorithms.datastructures;
  *
  */
 public class BinaryTree {
-    Node root;
+    BinaryTreeNode root;
 
     BinaryTree(int value) {
-        root = new Node(value);
+        root = new BinaryTreeNode(value);
     }
 
     BinaryTree() {
@@ -24,6 +24,27 @@ public class BinaryTree {
         this.root.set(value);
     }
 
+    public void preOrderTraversal(BinaryTreeNode node) {
+        if (node == null) return;
+        System.out.println(node.value);
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);
+    }
+
+    public void inOrderTraversal(BinaryTreeNode node) {
+        if (node == null) return;
+        inOrderTraversal(node.left);
+        System.out.println(node.value);
+        inOrderTraversal(node.right);
+    }
+
+    public void postOrderTraversal(BinaryTreeNode node) {
+        if (node == null) return;
+        postOrderTraversal(node.left);
+        postOrderTraversal(node.right);
+        System.out.println(node.value);
+    }
+
     public static void main(String[] args) {
         /* Create a new binary tree.
          *         100
@@ -33,12 +54,12 @@ public class BinaryTree {
          *   98  216  11
          */
         BinaryTree binaryTree = new BinaryTree();
-        binaryTree.root = new Node(100);
-        binaryTree.root.left = new Node(45);
-        binaryTree.root.right = new Node(76);
-        binaryTree.root.left.left = new Node(98);
-        binaryTree.root.left.right = new Node(216);
-        binaryTree.root.right.left = new Node(11);
+        binaryTree.root = new BinaryTreeNode(100);
+        binaryTree.root.left = new BinaryTreeNode(45);
+        binaryTree.root.right = new BinaryTreeNode(76);
+        binaryTree.root.left.left = new BinaryTreeNode(98);
+        binaryTree.root.left.right = new BinaryTreeNode(216);
+        binaryTree.root.right.left = new BinaryTreeNode(11);
 
         System.out.println("Getters");
         System.out.println("Get root node: " + binaryTree.root.get());
@@ -59,25 +80,8 @@ public class BinaryTree {
         System.out.println("### POST-ORDER TRAVERSAL ###");
         binaryTree.postOrderTraversal(binaryTree.root);
     }
+}
 
-    public void preOrderTraversal(Node node) {
-        if (node == null) return;
-        System.out.println(node.value);
-        preOrderTraversal(node.left);
-        preOrderTraversal(node.right);
-    }
-
-    public void inOrderTraversal(Node node) {
-        if (node == null) return;
-        inOrderTraversal(node.left);
-        System.out.println(node.value);
-        inOrderTraversal(node.right);
-    }
-
-    public void postOrderTraversal(Node node) {
-        if (node == null) return;
-        postOrderTraversal(node.left);
-        postOrderTraversal(node.right);
-        System.out.println(node.value);
-    }
+class BTNode {
+    
 }
