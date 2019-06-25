@@ -10,27 +10,32 @@ public class BinaryTree<T> {
      * Inner class of BinaryTreeNode that holds a value, and a reference to the left and right
      * nodes of each node in the binary tree.
      */
-    class BinaryTreeNode<T> {
-        T value;
+    @SuppressWarnings("unused")
+    class BinaryTreeNode<V> {
+        V value;
         BinaryTreeNode left;
         BinaryTreeNode right;
 
-        BinaryTreeNode(T value) {
+        BinaryTreeNode(V value) {
             this.value = value;
             right = null;
             left = null;
         }
 
-        public T get() {
+        BinaryTreeNode() {
+            value = null;
+        }
+
+        public V get() {
             return this.value;
         }
 
-        public void set(T value) {
+        public void set(V value) {
             this.value = value;
         }
     }
 
-    BinaryTreeNode root;
+    private BinaryTreeNode root;
 
     BinaryTree(T value) {
         root = new BinaryTreeNode(value);
@@ -69,13 +74,14 @@ public class BinaryTree<T> {
          *    /  \     /
          *   98  216  11
          */
-        BinaryTree intBinaryTree = new BinaryTree();
-        intBinaryTree.root = intBinaryTree.new BinaryTreeNode(100);
-        intBinaryTree.root.left = intBinaryTree.new BinaryTreeNode(45);
-        intBinaryTree.root.right = intBinaryTree.new BinaryTreeNode(76);
-        intBinaryTree.root.left.left = intBinaryTree.new BinaryTreeNode(98);
-        intBinaryTree.root.left.right = intBinaryTree.new BinaryTreeNode(216);
-        intBinaryTree.root.right.left = intBinaryTree.new BinaryTreeNode(11);
+        BinaryTree<Integer> intBinaryTree = new BinaryTree();
+        intBinaryTree.root = intBinaryTree.new BinaryTreeNode<String>();
+        intBinaryTree.root = intBinaryTree.new BinaryTreeNode<>(100);
+        intBinaryTree.root.left = intBinaryTree.new BinaryTreeNode<>(45);
+        intBinaryTree.root.right = intBinaryTree.new BinaryTreeNode<>(76);
+        intBinaryTree.root.left.left = intBinaryTree.new BinaryTreeNode<>(98);
+        intBinaryTree.root.left.right = intBinaryTree.new BinaryTreeNode<>(216);
+        intBinaryTree.root.right.left = intBinaryTree.new BinaryTreeNode<>(11);
 
         // Traverse the integer tree in three different ways.
         System.out.println("### PRE-ORDER TRAVERSAL ###");
@@ -93,13 +99,15 @@ public class BinaryTree<T> {
          *   /     \       /        \
          * "Chloe""Benji" "Kaitlyn" "Leeloo"
          */
-        BinaryTree stringBinaryTree = new BinaryTree("The All");
-        stringBinaryTree.root.left = stringBinaryTree.new BinaryTreeNode("Anthony");
-        stringBinaryTree.root.right = stringBinaryTree.new BinaryTreeNode("Jennine");
-        stringBinaryTree.root.left.left = stringBinaryTree.new BinaryTreeNode("Chloe");
-        stringBinaryTree.root.left.right = stringBinaryTree.new BinaryTreeNode("Benji");
-        stringBinaryTree.root.right.left = stringBinaryTree.new BinaryTreeNode("Kaitlyn");
-        stringBinaryTree.root.right.right = stringBinaryTree.new BinaryTreeNode("Leeloo");
+        BinaryTree<String> stringBinaryTree = new BinaryTree("The All");
+        stringBinaryTree.root.left = stringBinaryTree.new BinaryTreeNode<>("Anthony");
+        stringBinaryTree.root.right = stringBinaryTree.new BinaryTreeNode<>("Jennine");
+        stringBinaryTree.root.left.left = stringBinaryTree.new BinaryTreeNode<>("Chloe");
+        stringBinaryTree.root.left.right = stringBinaryTree.new BinaryTreeNode<>("Benji");
+        stringBinaryTree.root.right.left = stringBinaryTree.new BinaryTreeNode<>("Kaitlyn");
+        stringBinaryTree.root.right.right = stringBinaryTree.new BinaryTreeNode<>("Leeloo");
+
+        BinaryTree b = new BinaryTree();
 
         // Traverse the string tree in three different ways.
         System.out.println("### PRE-ORDER TRAVERSAL ###");
