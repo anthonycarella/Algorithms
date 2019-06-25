@@ -16,7 +16,6 @@ public class Stack<T> {
 
     Stack() {
         capacity = DEFAULT_INITIAL_CAPACITY;
-        //arr = new T[DEFAULT_INITIAL_CAPACITY];
         arr = (T[]) new Object[DEFAULT_INITIAL_CAPACITY];
         top = -1;
     }
