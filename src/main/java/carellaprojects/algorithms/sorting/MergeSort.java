@@ -19,6 +19,7 @@ import java.util.Arrays;
  * @author Anthony Carella
  * </pre>
  */
+@SuppressWarnings({"unused", "ManualArrayCopy"})
 public class MergeSort {
     /**
      * Entry  point for  this algorithm.  Takes an array,  creates a helper array that is the  same

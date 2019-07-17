@@ -1,7 +1,5 @@
 package carellaprojects.algorithms.datastructures;
 
-import java.util.Arrays;
-
 /**
  * Stack data structure using generics.
  * @author Anthony Carella
@@ -26,13 +24,13 @@ public class Stack<T> {
         top = -1;
     }
 
-    public void push(T num) {
+    public void push(T element) {
         if (isFull()) {
             System.out.println("Stack overflow. Program will be terminated.");
             System.exit(1);
         }
-        System.out.println("Inserting " + num);
-        arr[++top] = num;
+        System.out.println("Inserting " + element);
+        arr[++top] = element;
     }
 
     public T pop() {
@@ -80,7 +78,10 @@ public class Stack<T> {
 
 class Main {
     public static void main(String[] args) {
-        Stack<String> stringStack = new Stack<>();
+        Stack<String> stringStack = new Stack<>(10);
+        String s = stringStack.toString();
+        System.out.println(s);
+        System.out.println(stringStack.toString());
         stringStack.push("Twelve");
         stringStack.push("Noni");
         stringStack.push("Anthony");
